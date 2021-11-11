@@ -6,7 +6,7 @@
   </p>
    
   <p align="center">
-    Soccer API
+    Biblioteca
   </p>
 </p>
 
