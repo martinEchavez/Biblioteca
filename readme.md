@@ -2,7 +2,7 @@
 
 <p align="center">
    <p align="center">
-    <img src="https://www.gifsanimados.org/data/media/165/futbol-americano-y-futbol-imagen-animada-0093.gif" alt="Logo" width="80" height="80">
+    <img src="https://s03.s3c.es/imag/_v0/770x420/9/0/3/600x400_770x420-biblioteca-cambio-de-rol-dreamstime.jpg" alt="Logo" width="80" height="80">
   </p>
    
   <p align="center">
@@ -14,7 +14,6 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#architecture">Architecture</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#authentication">Authentication</a></li>
@@ -24,16 +23,12 @@
   </ol>
 </details>
 
-## Architecture
-
-![The Architecture](/src/docs/architecture.PNG 'Architecture')
-
 ## Installation
 
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/martinEchavez/soccer_api
+   git clone https://github.com/martinEchavez/Biblioteca
    ```
 
 2. Install NPM packages
@@ -170,9 +165,11 @@
 
 ## Queris
 
-> SELECT \* FROM player
+> SELECT \* FROM book
 
-> SELECT \* FROM team
+> SELECT \* FROM reader
+
+> SELECT \* FROM loanbook
 
 ## License
 
