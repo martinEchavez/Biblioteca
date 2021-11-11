@@ -43,9 +43,9 @@ router.get('/:id', authentication, async (req, res) => {
 
 router.post('/', authentication, async (req, res) => {
   try {
-    const { bookIsbn, readerId } = req.body;
+    const { bookIsbn, readerName } = req.body;
 
-    const response = await createLoanBook(bookIsbn, readerId);
+    const response = await createLoanBook(bookIsbn, readerName);
 
     res.status(response.status).send({
       response,

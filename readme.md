@@ -97,11 +97,93 @@
 
 > | `POST` | : `https://mutualser-biblioteca.herokuapp.com/api/auth/signin`
 
+### loanBooks
+
+> | `POST` | : `https://mutualser-biblioteca.herokuapp.com//api/auth/loanBook`
+
+`Body Json Input`
+
+```json
+// Palindromo
+{
+  "bookIsbn": 1221,
+  "readerName": "Martin"
+}
+```
+
+`Response`
+
+```json
+{
+  "response": {
+    "message": "palindrome books can only be used in the library",
+    "status": 200,
+    "data": ""
+  }
+}
+```
+
+`Body Json Input`
+
+```json
+// Digitos ISBN suma mayor a 30
+{
+  "bookIsbn": 899910,
+  "readerName": "Martin"
+}
+```
+
+`Response`
+
+```json
+{
+  "response": {
+    "message": "loanBook created",
+    "status": 200,
+    "data": [
+      {
+        "id": 1,
+        "loanDate": "11/11/2021",
+        "deliverDate": "29/11/2021",
+        "bookIsbn": 899910,
+        "readerName": "Martin"
+      }
+    ]
+  }
+}
+```
+
+`Body Json Input`
+
+```json
+// ISBN Normal
+{
+  "bookIsbn": 12012100,
+  "readerName": "Martin"
+}
+```
+
+`Response`
+
+```json
+{
+  "response": {
+    "message": "loanBook created",
+    "status": 200,
+    "data": [
+      {
+        "id": 1,
+        "loanDate": "11/11/2021",
+        "deliverDate": "",
+        "bookIsbn": 12012100,
+        "readerName": "Martin"
+      }
+    ]
+  }
+}
+```
+
 ## Queris
-
-> SELECT \* FROM book
-
-> SELECT \* FROM reader
 
 > SELECT \* FROM loanbook
 

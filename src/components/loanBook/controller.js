@@ -13,6 +13,7 @@ const getLoanBooks = async () => {
 
 const getLoanBookById = async (id) => {
   const foundBook = await getLoan(id);
+
   if (foundBook.length === 0) {
     return error('loanBook not found', 404);
   }
@@ -20,11 +21,11 @@ const getLoanBookById = async (id) => {
   return success('Update loan book', 200, foundBook);
 };
 
-const createLoanBook = async (bookIsbn, readerId) => {
+const createLoanBook = async (bookIsbn, readerName) => {
   let deliverDate = '';
 
-  if (typeof bookIsbn === 'undefined' || typeof readerId === 'undefined') {
-    return error('bookIsbn or readerId is required.', 400);
+  if (typeof bookIsbn === 'undefined' || typeof readerName === 'undefined') {
+    return error('bookIsbn or readerName is required.', 400);
   }
 
   const foundBook = await getBook(bookIsbn);
@@ -43,14 +44,16 @@ const createLoanBook = async (bookIsbn, readerId) => {
   const sumDigits = sumDigitIsbn(bookIsbn);
 
   if (sumDigits > 30) {
-    deliverDate = fnEndDate();
+    deliverDate = fnEndDate().toLocaleDateString('es-co');
   }
 
+  let today = new Date();
+
   const loanBook = {
-    loanDate: new Date(),
+    loanDate: today.toLocaleDateString('es-co'),
     deliverDate,
     bookIsbn,
-    readerId,
+    readerName,
   };
 
   const loanBookCreated = await create(loanBook);
