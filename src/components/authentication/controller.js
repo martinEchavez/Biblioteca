@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const { encryptPassword, comparePassword } = require('../../helpers');
+const { encryptPassword, comparePassword } = require('../../helpers/bcrypt');
 const { get, add, getUserByUsername, remove } = require('./store');
 
 const getUsers = () => {

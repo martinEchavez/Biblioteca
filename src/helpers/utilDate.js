@@ -1,14 +1,3 @@
-const bcrypt = require('bcryptjs');
-
-const encryptPassword = async (password) => {
-  const salt = await bcrypt.genSalt(10);
-  return bcrypt.hash(password, salt);
-};
-
-const comparePassword = async (password, passEncrypt) => {
-  return await bcrypt.compare(password, passEncrypt);
-};
-
 const palindromeChecker = (isbn) => {
   const isbnReversed = isbn.toString().split('').reverse().join('');
   return isbnReversed === isbn.toString() ? true : false;
@@ -50,8 +39,6 @@ const sumDigitIsbn = (isbn) => {
 };
 
 module.exports = {
-  encryptPassword,
-  comparePassword,
   palindromeChecker,
   fnEndDate,
   sumDigitIsbn,
