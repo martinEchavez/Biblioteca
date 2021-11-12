@@ -37,6 +37,12 @@
    npm install
    ```
 
+3. Run test
+
+   ```bash
+   npm run test
+   ```
+
 ## Usage
 
 1. Create an `.env` file with the following environment variables.
